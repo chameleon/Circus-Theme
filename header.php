@@ -21,4 +21,6 @@
 	<main>
 		<?php //wp_nav_menu(); /*grabs the first menu it finds */ ?>
 		<?php wp_nav_menu(array('theme_location'=>'primary')); /* same name as in functions.php */ ?>
-		<header>This is my header.</header>
+		<h1>My Site Title</h1>
+
+

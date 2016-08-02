@@ -5,7 +5,7 @@
 	<div id="content">
 		
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>	
-			<h2><?php the_title(); ?></h2>
+			<h3><?php the_title(); ?></h3>
 			
 			<h4>Posted on <?php the_time('F jS, Y') ?></h4>
 			

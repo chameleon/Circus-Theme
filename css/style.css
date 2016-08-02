@@ -18,22 +18,7 @@ other notes:
 -There is a primary menu up top and a shorter, secondary menu in the footer.
 
 */
-@font-face {
-    font-family: 'circusFont';
-    src: url('fonts/sancreek/sancreek-regular-webfont.eot');
-    src: url('fonts/sancreek/sancreek-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/sancreek/sancreek-regular-webfont.woff2') format('woff2'), url('fonts/sancreek/sancreek-regular-webfont.woff') format('woff'), url('fonts/sancreek/sancreek-regular-webfont.ttf') format('truetype'), url('fonts/sancreek/sancreek-regular-webfont.svg#sancreekregular') format('svg');
-    font-style: normal;
-    font-weight: 700;
-}
 
-h1 {
-  font-family: 'circusFont', sans-serif;
-  font-size: 2.2rem;
-  color: #424136;
-  padding: 0;
-  text-align: center;
-  margin: 0;
-}
 
 /*
 WordPress Generated Classes  *************

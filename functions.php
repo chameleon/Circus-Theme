@@ -8,6 +8,19 @@ function scratch_script_enqueue(){
 }
 add_action( 'wp_enqueue_scripts', 'scratch_script_enqueue' );
 
+//Add ROBOTO font  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+function wpb_add_google_fonts() {
+	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,300,500,700', false );
+}
+add_action( 'wp_enqueue_scripts', 'wpb_add_google_fonts' );
+
+/*
+function add_circus_font() {
+	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,300,500,700', false );
+}
+add_action( 'wp_enqueue_scripts', 'add_circus_font' );
+*/
+
 
 
 function scratch_theme_setup(){
