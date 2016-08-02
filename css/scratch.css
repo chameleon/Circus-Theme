@@ -1,0 +1,16 @@
+
+main{
+	width:90%;
+	margin: 0 auto;  //Center the MAIN containter
+}
+
+div{outline:2px solid red;}
+
+h1 {
+	color: red;
+}
+
+.frontBG{background-color: lightblue;}
+.frontTextColor{color: darkblue;}
+.notFrontBG{background-color: tan;}
+.notFrontTextColor{color: purple;}
