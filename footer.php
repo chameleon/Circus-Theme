@@ -6,6 +6,7 @@
 		</footer>
 
 		<?php wp_footer(); //grabs footer functions ?>
-	</main>
+		
+	<!-- </div> --><!-- .container -->
 	</body>
 </html>

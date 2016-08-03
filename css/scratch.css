@@ -1,7 +1,7 @@
 
-main{
+.container{
 	width:90%;
-	margin: 0 auto;  //Center the MAIN containter
+	margin: 0 auto;  //Center the  .containter
 }
 
 div{outline:2px solid red;}
@@ -61,6 +61,12 @@ h1, h2, h3, h4, h5 {
 }
 /* END iconic font styles taken from material-design-iconic-font.css */
 
+/*
+html{
+    //  1rem is now = 10px (for setting exact heights like 1.4REM = 14px)  
+    font-size: 62.6%;    
+}
+*/
 
 
 body { 
@@ -90,20 +96,55 @@ body {
   background: url('../images/bg18.png') repeat;
   position: fixed;
   width: 100%;
-  height: 100%;
+  
   top: 0;
   left: 0;
   z-index: -2;
 }
+#title-box-bg header{
+	display: none;
+}
+#title-box-bg {
+    width: 100%;
+}
+#title-box {
+    width: 100%;
+    max-width: 601px;
+    margin: 0 auto;
+    }
 #monkeyDiv {
-  display: table-cell;
-  	height: 100px;
-  width: 48%;
-  text-align: center;
-  background: url('../images/UXmonkeyMask400.png') no-repeat;
-        background-size: 100% auto;
-        background-position: center top;
+  	display: table-cell;
+  	//height: 100px;
+  	width: 48%;
+  	text-align: center;
+  	// background: url('../images/UXmonkeyMask400.png') no-repeat;
+   //      background-size: 100% auto;
+   //      background-position: center top;
  }
+ #monkey {
+    width: 100%;
+    max-width: 340px;
+}
+#tagline {
+    vertical-align: middle;
+    display: block;
+    margin: 0 10px;
+    position: relative;
+    top: -20px;
+    padding: 0 20px;
+    color: @darkText;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-style: italic;
+    text-shadow: 2px 2px 12px #ffffff;
+    letter-spacing: .5px;
+    /*text-align: center;*/
+    text-align: justify;
+}
+#tagline h1{
+        display: block;
+        padding-bottom: 10px;
+}
 /*
 #wrapper { display: block; border: 1px #a2a2a2 solid; width:90%; margin:0px auto; }
 #header { border: 2px #a2a2a2 solid; }
@@ -156,8 +197,34 @@ h3:hover {
         >= 1020px
 */
 @media screen and (min-width: 600px) {
-
-
+	main, #title-box-bg{
+        max-width:90%;
+        margin: 0 auto;
+    }
+    .bg{width: 601px;
+        margin: auto;
+        left:0;
+        right:0;
+    }
+    #title-box {
+        padding-top: 4rem;
+    }
+    #title-box-bg header{
+        display: block;
+    }
+    #tagline h1{
+        display: none;
+    }
+    #tagline {
+        //top: 10px; 
+        width:52%; 
+        display: table-cell; 
+        padding: 0 30px;
+        //text-align: left;
+        top: 40px; 
+        font-size: 1.6rem; 
+        line-height: 2rem;
+    }
 }
 @media screen and (min-width: 1020px) {
 

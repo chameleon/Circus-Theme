@@ -5,6 +5,7 @@
 
 /////////////
 $( document ).ready(function() {
+	alert('jq ready');
   window.scrollTo(0, 0);
 });
 
