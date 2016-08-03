@@ -7,16 +7,25 @@ Include Scripts
 
 /* Use this functions.php to activate features and include css, js, fonts, etc */
 function scratch_script_enqueue(){
+	// CSS
+	wp_enqueue_style( 'bootstrapcss', get_template_directory_uri() .'/css/bootstrap.min.css', array(), '3.3.7', 'all' );
 	wp_enqueue_style( 'myStyle', get_template_directory_uri() .'/css/scratch.css', array(), '1.0.0', 'all' );
-
-	wp_enqueue_script( 'myScript', get_template_directory_uri() . '/js/scratch.js', array(), '1.0.0', true );  //true means this script WILL be written in the FOOTER
-
-	//enables the jquery that is built into wordpress BUT is better t use your own version for version control and WHERE on the age it is loaded!, etc.  Using my own now.
 	
+
+	// JS
+	//enables the jquery that is built into wordpress BUT is better t use your own version for version control and WHERE on the age it is loaded!, etc.  Using my own now.
 	/*	wp_enqueue_script( 'jquery');  */
 	//  OR ... use your own version for control
 	$myJqueryVersionNum = '2.1.4';
 	wp_enqueue_script( 'myJquery', get_template_directory_uri() . '/js/jquery-' . $myJqueryVersionNum . 'min.js', array(), '1.0.0', true ); 
+
+	//wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.7', true );
+	
+	wp_enqueue_script( 'myScript', get_template_directory_uri() . '/js/scratch.js', array(), '1.0.0', true );  //true means this script WILL be written in the FOOTER
+
+	
+
+	
 	
 }
 add_action( 'wp_enqueue_scripts', 'scratch_script_enqueue' );

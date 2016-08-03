@@ -19,6 +19,23 @@
 
 	<body  <?php body_class( $myBodyClass );  //could be array here instead of var ?>>
 	<main>
+		<div class='bg2'>
+		</div>
+
+		<div class='bg' >
+			<div id='title-box-bg'>
+				<header></header>
+				<div id='title-box'>
+					<div id='monkeyDiv'><!-- change monkey to BG img -->
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+
+
 		<?php //wp_nav_menu(); /*grabs the first menu it finds */ ?>
 		<?php wp_nav_menu(array('theme_location'=>'primary')); /* same name as in functions.php */ ?>
 

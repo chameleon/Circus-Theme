@@ -73,8 +73,38 @@ body {
     //padding: 0px;
     font-family: 'Roboto', sans-serif;
     
-    //overflow-x: hidden;
+    overflow-x: hidden;
 }
+
+.bg {
+  background: url('../images/circusTentTiltShift.png') no-repeat;
+  position: fixed;
+  top: 0px;
+  z-index: -1;
+  width: 100%;
+  height: 36rem;
+  background-size: 100% auto;
+  background-position: center top;
+}
+.bg2 {
+  background: url('../images/bg18.png') repeat;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+#monkeyDiv {
+  display: table-cell;
+  	height: 100px;
+  width: 48%;
+  text-align: center;
+  background: url('../images/UXmonkeyMask400.png') no-repeat;
+        background-size: 100% auto;
+        background-position: center top;
+ }
+/*
 #wrapper { display: block; border: 1px #a2a2a2 solid; width:90%; margin:0px auto; }
 #header { border: 2px #a2a2a2 solid; }
 #content { 
@@ -87,7 +117,7 @@ body {
 #delimiter { clear: both; }
 #footer { border: 2px #a2a2a2 solid; }
 .title { font-size: 11pt; font-family: verdana; font-weight: bold; }
-
+*/
 
 
 h1 {
@@ -117,13 +147,7 @@ h3:hover {
 }
 
 .menu-main-nav-container{
-	background: url('../images/circusTentTiltShift.png') no-repeat;
-	background-size: 100% auto;
-  	background-position: center top;
-  //position: fixed;
-  //top: 0px;
-  //width: 100%;
-  	height: 200px; //36rem;
+	
 }
 
 /*  Media queries for responsiveness - 
