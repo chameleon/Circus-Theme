@@ -6,6 +6,7 @@
 		
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>	
 			<h3><?php the_title(); ?></h3>
+			<div class='thumbnail-img'><?php the_post_thumbnail('thumbnail');//size ?></div>
 			
 			<h4>Posted on <?php the_time('F jS, Y') ?></h4>
 			
