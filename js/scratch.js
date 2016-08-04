@@ -1,12 +1,6 @@
 
-/* THe js here so far is jsut copied from my portfolio site. */
-
-//document.write('(scratch.js is working here.)');
-
-/////////////
 $( document ).ready(function() {
-	alert('jq ready');
-  window.scrollTo(0, 0);
+	window.scrollTo(0, 0);
 });
 
 
@@ -56,12 +50,8 @@ function parallax() {
     if(scrolled < 80 ){
         $('#monkeyDiv').css('width', (48 + scrolled/5) + '%');
         $('header h1').css('font-size', 2.9 + (scrolled * 0.05) + 'rem');
-    
-
-       // $('#tagline').css('font-size', 1.6 - (scrolled * .1)/40 + 'rem');
-    }/*else{
-        $('#monkey').css('width', (100 + scrolled/4) + '%');
-    }*/
+     
+    }
 }
 
 /* 

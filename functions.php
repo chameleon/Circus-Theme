@@ -10,7 +10,8 @@ function scratch_script_enqueue(){
 	// CSS
 	//wp_enqueue_style( 'bootstrapcss', get_template_directory_uri() .'/css/bootstrap.min.css', array(), '3.3.7', 'all' );
 	wp_enqueue_style( 'myStyle', get_template_directory_uri() .'/css/scratch.css', array(), '1.0.0', 'all' );
-	
+	wp_enqueue_style( 'myStyle', get_template_directory_uri() .'/css/robotoFont.css', array(), '1.0.0', 'all' );
+	wp_enqueue_style( 'myStyle', get_template_directory_uri() .'/css/material-design-iconic-font.min.css', array(), '1.0.0', 'all' );
 
 	// JS
 	//enables the jquery that is built into wordpress BUT is better t use your own version for version control and WHERE on the age it is loaded!, etc.  Using my own now.
