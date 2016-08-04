@@ -68,6 +68,11 @@ h1, h2, h3, h4, h5 {
 // }
 
 /* These zmdi names are from the material design font stylesheet */
+.containerMenuOverride{
+	padding-right: 0;
+	padding-left: 0;
+}
+.navbar{margin-bottom: 0;}
 .zmdi {
   display: inline-block;
   font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
@@ -219,6 +224,14 @@ i:hover {
 
 main{
 	background-color: #ffffff;
+		float:left;
+		width: 66%;
+}
+.clearBoth{
+	clear: both;
+}
+#sidebar{  
+	background-color: tan;
 }
 h1 {
   font-family: 'sancreekregular', sans-serif;

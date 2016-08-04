@@ -1,5 +1,8 @@
 <?php
 /*
+Call a function to do an action with a hook
+
+
 ======================
 Include Scripts
 ======================
@@ -8,7 +11,9 @@ Include Scripts
 /* Use this functions.php to activate features and include css, js, fonts, etc */
 function scratch_script_enqueue(){
 	// CSS
-	wp_enqueue_style( 'bootstrapcss', get_template_directory_uri() .'/css/bootstrap.min.css', array(), '3.3.7', 'all' );
+	wp_enqueue_style( 'bootstrapcss', get_template_directory_uri() .'/css/bootstrap-menu.css', array(), '3.3.7', 'all' );
+	// wp_enqueue_style( 'bootstrapcss', get_template_directory_uri() .'/css/bootstrap.min.css', array(), '3.3.7', 'all' );
+
 	wp_enqueue_style( 'myStyle', get_template_directory_uri() .'/css/scratch.css', array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'myStyle', get_template_directory_uri() .'/css/robotoFont.css', array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'myStyle', get_template_directory_uri() .'/css/material-design-iconic-font.min.css', array(), '1.0.0', 'all' );
@@ -21,6 +26,8 @@ function scratch_script_enqueue(){
 	wp_enqueue_script( 'myJquery', get_template_directory_uri() . '/js/jquery-' . $myJqueryVersionNum . '.min.js', array(), '1.0.0', true ); 
 
 	wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.7', true );
+	// wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.7', true );
+
 
 	wp_enqueue_script( 'myScript', get_template_directory_uri() . '/js/scratch.js', array(), '1.0.0', true );  //true means this script WILL be written in the FOOTER
 	wp_enqueue_script( 'scrollTo', get_template_directory_uri() . '/js/jquery.scrollTo.min.js', array(), '1.0.0', true );
@@ -77,5 +84,41 @@ add_theme_support( 'post-thumbnails');
 
 //give users ability to choose from 10 preset WP post formats- here's 3:
 add_theme_support('post-formats', array('aside','image','video'));
+
+
+/* Setup a SIDEBAR or two */
+function scratch_widget_setup(){
+	   /**
+		* Creates a sidebar
+		* @param string|array  Builds Sidebar based off of 'name' and 'id' values.
+		*/
+		$args = array(
+			'name'          => __( 'Sidebar name', 'theme_text_domain' ),
+			'id'            => 'unique-sidebar-id',
+			'description'   => 'Main Sidebar here',
+			'class'         => 'custom',  //generates the class .sidebar_custom  !!
+			'before_widget' => '<li id="%1" class="widget %2">',
+			'after_widget'  => '</li>',
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => '</h2>'
+		);
+		register_sidebar( $args );
+		/* Another sidebar here */
+		// $args = array(
+		// 	'name'          => __( 'Sidebar name', 'theme_text_domain' ),
+		// 	'id'            => 'unique-sidebar-id',
+		// 	'description'   => 'Main Sidebar here',
+		// 	'class'         => 'custom',  //generates the class .sidebar_custom  !!
+		// 	'before_widget' => '<li id="%1" class="widget %2">',
+		// 	'after_widget'  => '</li>',
+		// 	'before_title'  => '<h2 class="widgettitle">',
+		// 	'after_title'   => '</h2>'
+		// );
+		// register_sidebar( $args );
+	
+}
+/* 1st param is WHEN, */
+add_action( 'widgets_init', 'scratch_widget_setup' );
+
 
 ?>

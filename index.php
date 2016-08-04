@@ -22,7 +22,10 @@
 	</main>
 
 
-<?php //the_content();  ?>
+	<?php //the_content();  ?>
 
+<?php get_sidebar(); ?>
+
+<div class='clearBoth'></div>
 <?php get_footer(); ?>
 

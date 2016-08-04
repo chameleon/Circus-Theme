@@ -1,3 +1,8 @@
+<script language="JavaScript" type="text/javascript"> 
+ document.write('<script language="JavaScript" src="http://www.myweather2.com/Plugins/weather/general.ashx?type=js&n=1&t=24&x=f1_day&inc=False&w=230&h=200&headerbgcolor=8F080E&headertextcolor=ffffff&temp_unit=2&windspeed_unit=1&puref=a1162017-00d8-49ec-8086-6a40cbe0b9fe&cb=' + Math.random() + '" type="text/javascript"><\/scr' + 'ipt>');
+ </script><noscript><a href="http://www.myweather2.com/City-Town/United-States-Of-America/Hawaii/Honolulu.aspx" title="Honolulu">Honolulu weather forecast from Weather2</a></noscript>
+ 
+
 <div id="demo"></div>
 	<br>================
 	<br>
