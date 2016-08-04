@@ -1,7 +1,7 @@
 
 .container{
-	width:90%;
-	margin: 0 auto;  //Center the  .containter
+	width:100%;
+	//margin: 0 auto;  //Center the  .containter
 }
 .content{
 	padding: 15px;
@@ -67,12 +67,30 @@ h1, h2, h3, h4, h5 {
 //        url('../fonts/sancreek-v7-latin/sancreek-v7-latin-regular.svg#Sancreek') format('svg');
 // }
 
-/* These zmdi names are from the material design font stylesheet */
+/* These BOOTSTRAP OVERRIDES */
 .containerMenuOverride{
 	padding-right: 0;
 	padding-left: 0;
 }
-.navbar{margin-bottom: 0;}
+.navbar{
+	margin-bottom: 0;
+}
+.navbar img{
+	position: relative;
+	bottom: -5px;
+}
+.row{
+	margin-left: 0;
+    margin-right: 0;
+}
+#site-wrapper>.row {
+    background-color: #ffffff;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+/* These zmdi OVERRIDES names are from the material design font stylesheet */
 .zmdi {
   display: inline-block;
   font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
@@ -118,7 +136,22 @@ body {
     font-family: 'Roboto';   
     overflow-x: hidden;
 }
-
+#site-wrapper{
+	width:100%;
+	margin: 0 auto;
+}
+main{
+	background-color: #ffffff;
+		//float:left;
+		width: 100%;
+}
+.clearBoth{
+	clear: both;
+}
+#sidebar{  
+	//background-color: tan;
+	margin: 15px;
+}
 .bg {
   background: url('../images/circusTentTiltShift.png') no-repeat;
   position: fixed;
@@ -222,17 +255,6 @@ i:hover {
 .title { font-size: 11pt; font-family: verdana; font-weight: bold; }
 */
 
-main{
-	background-color: #ffffff;
-		float:left;
-		width: 66%;
-}
-.clearBoth{
-	clear: both;
-}
-#sidebar{  
-	background-color: tan;
-}
 h1 {
   font-family: 'sancreekregular', sans-serif;
   font-size: 2.2rem;
@@ -264,8 +286,20 @@ footer{
 	background-color: #8F080E;
 	color: #ffffff;
 }
+footer li{
+	//display: block;
+	padding: 0 10px;
+}
+// footer>div{
+// 	width: 33%;
+// }
 footer a{
 	color: #ffffff;
+}
+footer a:hover{
+	color: #ffffff;
+	font-weight: bold;
+	text-decoration: none;
 }
 /*  Media queries for responsiveness - 
         Breakpoints where content seems to like them, not trying to follow device width trends
@@ -273,16 +307,8 @@ footer a{
         >= 1020px
 */
 @media screen and (min-width: 600px) {
-	main, #title-box-bg, footer{
-        max-width:90%;
-        margin: 0 auto;
-    }
-    #social_bar {
-        right: 2px;
-    }
-    #social_bar i{
-        font-size: 3rem;  /* to override .zmdi style in iconic font.css */
-    }
+
+   
     .bg{width: 601px;
         margin: auto;
         left:0;
@@ -308,11 +334,11 @@ footer a{
         line-height: 2rem;
     }
 
-    blockquote{
+    #tagline blockquote{
         margin: 0;
     //quotes: "\201C""\201D""\2018""\2019";
     }
-    blockquote:before {
+    #tagline blockquote:before {
         display: inline;
         content: "\201C";
         font-size: 60px;
@@ -321,7 +347,7 @@ footer a{
         //top: -20px;
         font-family: 'sancreekregular';
     }
-    blockquote:after {
+    #tagline blockquote:after {
         display: block;
         content: "\201D";
         font-size: 60px;
@@ -330,6 +356,35 @@ footer a{
         bottom: 60px;
         font-family: 'sancreekregular';
     }
+}
+/* THis seems to be the breakpoint for the bootstrap menu to collapse */
+@media screen and (min-width: 765px) {
+	main{
+        //max-width:90%;
+        //	width: 66%;  //needed ?
+        margin: 0 auto;
+    }
+    main{
+    	//float: left;
+    }
+    #site-wrapper{
+		width:88%;
+		margin: 0 auto;
+	}
+	#title-box-bg{
+		max-width: 90%;
+		margin: 0 auto;
+	}
+	 #social_bar {
+        right: 2px;
+    }
+    #social_bar i{
+        font-size: 3rem;  /* to override .zmdi style in iconic font.css */
+    }
+    footer li{
+		display: block;
+		padding: 0;
+	}
 }
 @media screen and (min-width: 1020px) {
 
