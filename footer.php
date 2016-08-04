@@ -11,7 +11,7 @@
 			<div class='col-xs-12 col-sm-4'>
 				<dl>
 					<dt>WordPress Links</dt>
-					<dd><a href='' target='_blank'>WordPress Links</a></dd>
+					<dd><a href='http://www.wordpress.org' target='_blank'>WordPress.org</a></dd>
 					<dd><a href='' target='_blank'>WordPress Links</a></dd>
 					<dd><a href='' target='_blank'>WordPress Links</a></dd>
 					<dd><a href='' target='_blank'>WordPress Links</a></dd>
