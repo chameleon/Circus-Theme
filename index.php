@@ -1,22 +1,25 @@
 
-<!-- looks for a file called header.php -->
 <?php get_header(); ?>
 
-	<main><!-- call this MAIN eventually instead of content -->
+	<main>
 		
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>	
 			<h3><?php the_title(); ?></h3>
-			<div class='thumbnail-img'>
-				<?php the_post_thumbnail('thumbnail');//size ?>
-			</div>			
-			<h4>Posted on <?php the_time('F jS, Y') ?></h4>			
-			<p><?php the_content(__('(more...)')); ?></p>			
-			<hr> 
+			<div class='content'>
+				<div class='thumbnail-img'>
+					<?php the_post_thumbnail('thumbnail');//size ?>
+				</div>			
+				<h4>Posted on <?php the_time('F jS, Y') ?></h4>			
+				<p><?php the_content(__('(more...)')); ?></p>			
+				<hr> 
+			</div>
 		<?php endwhile; else: ?>
-			<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+			<div class='content'>
+				<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+			</div>
 		<?php endif; ?>
 	
-	</main><!-- end content / MAIN -->
+	</main>
 
 
 <?php //the_content();  ?>

@@ -3,12 +3,15 @@
 	width:90%;
 	margin: 0 auto;  //Center the  .containter
 }
-
+.content{
+	padding: 15px;
+}
 //div{outline:2px solid red;}
 
 h1 {
 	color: red;
 }
+li{display: inline-block;}
 
 .frontBG{}
 .frontTextColor{}

@@ -8,8 +8,8 @@
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 		<link rel= "icon" media="all" type="image/vnd.microsoft.icon" href="favicon.ico" />
 
-		<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic' rel='stylesheet' type='text/css'>
-		 --><!-- wp_head grabs functions??? -->
+		
+		 <!-- wp_head grabs functions??? -->
 		<? wp_head(); ?>
 	</head>
 
@@ -58,7 +58,7 @@
 		
 
 		<?php //wp_nav_menu(); /*grabs the first menu it finds */ ?>
-		<?php //wp_nav_menu(array('theme_location'=>'primary')); /* same name as in functions.php */ ?>
+		<?php wp_nav_menu(array('theme_location'=>'primary')); /* same name as in functions.php */ ?>
 
 		
 

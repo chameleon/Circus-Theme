@@ -9,25 +9,25 @@
 	*/
 
 	get_header(); ?>
-
-	<div id="content">
+<main>
 		
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>	
-			
-			
-			<!--<h4>Posted on <?php the_time('F jS, Y') ?></h4>-->
-			
-			<p><?php the_content(__('(more...)')); ?></p>
-			
-			<hr> 
+			<h3>No Title Template</h3>
+			<div class='content'>
+				<div class='thumbnail-img'>
+					<?php the_post_thumbnail('thumbnail');//size ?>
+				</div>			
+				<h4>Posted on <?php the_time('F jS, Y') ?></h4>			
+				<p><?php the_content(__('(more...)')); ?></p>			
+				<hr> 
+			</div>
 		<?php endwhile; else: ?>
-		
-			<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-
+			<div class='content'>
+				<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+			</div>
 		<?php endif; ?>
-	</div>
-
-
+	
+	</main>
 		<?php //the_content();  ?>
 
 <?php get_footer(); ?>
