@@ -37,7 +37,12 @@
 				</div>
 				<div id='tagline'>
 	    			<h1>~Joe UX Designer~</h1>
-					<blockquote>Juggling stakeholder concerns while balancing form and function on the tightrope toward timely deliverables.</blockquote>
+					<blockquote>
+					<?php 
+						/* Grabs the value that user entered via plugin. */
+						echo get_option('hello_world_data'); 
+					?>
+				</blockquote>
 				</div>
 			</div>		
 		</div>
