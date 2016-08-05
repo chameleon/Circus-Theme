@@ -15,7 +15,7 @@
 					<dd><a href='' target='_blank'>WordPress Links</a></dd>
 					<dd><a href='' target='_blank'>WordPress Links</a></dd>
 					<dd><a href='' target='_blank'>WordPress Links</a></dd>
-				</ul>
+				</dl>
 			</div>
 		</div>
 		</footer>
