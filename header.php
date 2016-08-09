@@ -86,7 +86,6 @@
 			foreach ($options as $key => $value){
 				if ($options[$key]){  // if its not empty
 					$userIconList[$i] = $value;  //add the index num and url to a new array
-					//print_r($userIconList);  					
 				}
 				$i++;
 			}

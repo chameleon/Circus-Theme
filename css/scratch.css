@@ -1,31 +1,50 @@
+/*
+A third view comes from Chris Coyier of CSS-Tricks. 
+His solution makes use of all three units we encountered so far. 
+He keeps the root size defined in px, modules defined 
+with rem units, and elements inside modules sized with em. 
+This approach makes easier to manipulate global size, which 
+scales the type in the modules, while the module content is 
+scaled based on the module font size itself. Louis Lazaris 
+discussed that latter concept in The Power of em Units in CSS.
+http://www.sitepoint.com/power-em-units-css/
+*/
+
+html{
+   font-size: 10px;    
+}
+body { 
+  /*  1rem is now = 10px, not 16, (for setting exact heights like 1.4REM = 14px)*/
+  
+  line-height: normal;
+  color: #424136;
+  background: url('../images/bg18.png') repeat;
+  font-family: 'Roboto';   
+  overflow-x: hidden;
+  background-color: #ffffff; /*comes after bg image????*/
+}
 
 .container{
 	width:100%;
-	//margin: 0 auto;  //Center the  .containter
+	
 }
 .content{
-	padding: 15px;
+	padding: 20px;
 }
-//div{outline:2px solid red;}
 
 
 li{display: inline-block;}
 
+
+/*
 .frontBG{}
 .frontTextColor{}
 .notFrontBG{}
 .notFrontTextColor{}
-
-/////////////////
-
+*/
 
 
-// @font-face {
-//     font-family: "Sancreek";
-//     font-style: normal;
-//     font-weight: 700;
-//     src: url("../fonts/sancreek/sancreek-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/sancreek/sancreek-regular-webfont.woff2") format("woff2"), url("../fonts/sancreek/sancreek-regular-webfont.woff") format("woff"), url("../fonts/sancreek/sancreek-regular-webfont.ttf") format("truetype"), url("../fonts/sancreek/sancreek-regular-webfont.svg#sancreekregular") format("svg");
-// }
+
 h1, h2, h3, h4, h5 {
     font-family: 'Sancreek', sans-serif;
     }
@@ -51,21 +70,7 @@ h1, h2, h3, h4, h5 {
     font-style: normal;
 
 }
-/* same? */
-// @font-face {
-//   font-family: 'Sancreek';
-//   font-style: normal;
-//   font-weight: 400;
-//   src: url('../fonts/sancreek-v7-latin/sancreek-v7-latin-regular.eot'); /* IE9 Compat Modes */
-//   src: local('Sancreek Regular'), local('Sancreek-Regular'),
-//        url('../fonts/sancreek-v7-latin/sancreek-v7-latin-regular.eot?#iefix') format('embedded-opentype'), 
-//        url('../fonts/sancreek-v7-latin/sancreek-v7-latin-regular.woff2') format('woff2'),
-//        url('../fonts/sancreek-v7-latin/sancreek-v7-latin-regular.woff') format('woff'),
-//        url('../fonts/sancreek-v7-latin/sancreek-v7-latin-regular.ttf') format('truetype'),
-//        url('../fonts/sancreek-v7-latin/sancreek-v7-latin-regular.svg#Sancreek') format('svg');
-// }
 
-/* These BOOTSTRAP OVERRIDES */
 .containerMenuOverride{
 	padding-right: 0;
 	padding-left: 0;
@@ -75,7 +80,7 @@ h1, h2, h3, h4, h5 {
 }
 .navbar img{
 	position: relative;
-	bottom: -5px;
+	bottom: -7px;
 }
 .row{
 	margin-left: 0;
@@ -88,6 +93,7 @@ h1, h2, h3, h4, h5 {
     padding-left: 0;
     padding-right: 0;
 }
+
 /* These zmdi OVERRIDES names are from the material design font stylesheet */
 .zmdi {
   display: inline-block;
@@ -116,39 +122,36 @@ h1, h2, h3, h4, h5 {
 /* END iconic font styles taken from material-design-iconic-font.css */
 
 
-html{
-    //  1rem is now = 10px (for setting exact heights like 1.4REM = 14px)  
-    font-size: 62.6%;    
+h1 {
+  font-family: 'sancreekregular', sans-serif;
+  font-size: 3rem;
+  color: #424136;
+  padding: 0;
+  text-align: center;
+  margin: 0;
 }
 
-
-
-body { 
-//	text-align: center;
-	//background-color: tan;
-	color: #424136;
-	background: url('../images/bg18.png') repeat;
-
-	//margin: 0px;
-    //padding: 0px;
-    font-family: 'Roboto';   
-    overflow-x: hidden;
+h2{
+  font-size: 1.8rem;
 }
+
 #site-wrapper{
+  font-size: 1.6rem;
 	width:100%;
 	margin: 0 auto;
 }
 main{
 	background-color: #ffffff;
-		//float:left;
-		width: 100%;
+	width: 100%;
+}
+.menu-main-nav-container{
+  font-size: 1.8rem;
 }
 .clearBoth{
 	clear: both;
 }
 #sidebar{  
-	//background-color: tan;
-	margin: 15px;
+	margin: 50px 15px 15px 15px;
 }
 .bg {
   background: url('../images/circusTentTiltShift.png') no-repeat;
@@ -182,12 +185,8 @@ main{
     }
 #monkeyDiv {
   	display: table-cell;
-  	//height: 100px;
   	width: 48%;
   	text-align: center;
-  	// background: url('../images/UXmonkeyMask400.png') no-repeat;
-   //      background-size: 100% auto;
-   //      background-position: center top;
  }
  #monkey {
     width: 100%;
@@ -201,71 +200,51 @@ main{
     top: -20px;
     padding: 0 20px;
     color: #000000;
-    font-size: 1.4rem;
-    line-height: 1.8rem;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
     font-style: italic;
     text-shadow: 2px 2px 12px #ffffff;
     letter-spacing: .5px;
-    /*text-align: center;*/
     text-align: justify;
 }
 #tagline h1{
-        display: block;
-        padding-bottom: 10px;
+    display: block;
+    padding-bottom: 10px;
 }
 #social_bar {
     width: 100%;
     text-align: right;
     position: relative;
     top: -5px;
-    right: 20px;
+    right: 0px;
 }
 #social_bar a {
     outline: none;
     text-decoration: none;
 }
+
+/* to override .zmdi style in iconic font.css */
 #social_bar i{
-    font-size: 2.5rem;  /* to override .zmdi style in iconic font.css */
+    font-size: 4.4rem;  
 }
 i {
     color: #B3AB87;
     position: relative;
     bottom: -3px;
-    padding-left: 4px;
+    padding: 0 5px;
     cursor: pointer;
 }
 i:hover {
     color: #8F896B;
     text-shadow: 2px 2px 1px #B3AB87;
 }
-/*
-#wrapper { display: block; border: 1px #a2a2a2 solid; width:90%; margin:0px auto; }
-#header { border: 2px #a2a2a2 solid; }
-#content { 
-	//width: 75%; 
-	border: 2px #a2a2a2 solid; 
-	//float: left; 
-	background-color: #ffffff;
-}
-#sidebar { width: 23%; border: 2px #a2a2a2 solid; float: right; }
-#delimiter { clear: both; }
-#footer { border: 2px #a2a2a2 solid; }
-.title { font-size: 11pt; font-family: verdana; font-weight: bold; }
-*/
 
-h1 {
-  font-family: 'sancreekregular', sans-serif;
-  font-size: 2.2rem;
-  color: #424136;
-  padding: 0;
-  text-align: center;
-  margin: 0;
-}
+
 h3 {
   font-family: 'Roboto', sans-serif;
   height: 4.4rem;
   line-height: 4.4rem;
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 300;
   color: #ffffff;
   padding: 0 0 0 15px;
@@ -273,24 +252,23 @@ h3 {
   cursor: pointer;
   background-color: #8F080E;
   letter-spacing: 1px;
-  /*border-bottom: 1px solid #6F0007;*/
 }
 h3:hover {
   font-weight: 400;
 }
 
+a{
+  color:#8F080E;
+}
 
 footer{
 	background-color: #8F080E;
 	color: #ffffff;
+  text-align: center;
 }
 footer li{
-	//display: block;
 	padding: 0 10px;
 }
-// footer>div{
-// 	width: 33%;
-// }
 footer a{
 	color: #ffffff;
 }
@@ -304,8 +282,11 @@ footer a:hover{
         600px - 1019px
         >= 1020px
 */
-@media screen and (min-width: 600px) {
 
+@media screen and (min-width: 600px) {
+   html{
+    font-size: 11px;    
+    }
    
     .bg{width: 601px;
         margin: auto;
@@ -322,11 +303,9 @@ footer a:hover{
         display: none;
     }
     #tagline {
-        //top: 10px; 
         width:52%; 
         display: table-cell; 
         padding: 0 30px;
-        //text-align: left;
         top: 40px; 
         font-size: 1.6rem; 
         line-height: 2rem;
@@ -334,7 +313,6 @@ footer a:hover{
 
     #tagline blockquote{
         margin: 0;
-    //quotes: "\201C""\201D""\2018""\2019";
     }
     #tagline blockquote:before {
         display: inline;
@@ -342,7 +320,6 @@ footer a:hover{
         font-size: 60px;
         position: absolute;
         left: -5px;
-        //top: -20px;
         font-family: 'sancreekregular';
     }
     #tagline blockquote:after {
@@ -355,17 +332,13 @@ footer a:hover{
         font-family: 'sancreekregular';
     }
 }
-/* THis seems to be the breakpoint for the bootstrap menu to collapse */
+/* This seems to be the breakpoint for the bootstrap menu to collapse */
 @media screen and (min-width: 765px) {
 	main{
-        //max-width:90%;
-        //	width: 66%;  //needed ?
-        margin: 0 auto;
-    }
-    main{
-    	//float: left;
-    }
-    #site-wrapper{
+    margin: 0 auto;
+  }
+    
+  #site-wrapper{
 		width:88%;
 		margin: 0 auto;
 	}
@@ -374,22 +347,16 @@ footer a:hover{
 		margin: 0 auto;
 	}
 	 #social_bar {
-        right: 2px;
-    }
-    #social_bar i{
-        font-size: 3rem;  /* to override .zmdi style in iconic font.css */
-    }
-    footer li{
+    right: 2px;
+  }
+  #social_bar i {
+    font-size: 3.8rem;
+  }
+  footer{
+    padding-top: 20px;
+  }
+  footer li{
 		display: block;
 		padding: 0;
 	}
 }
-@media screen and (min-width: 1020px) {
-
-
-}
-
-
-
-
-

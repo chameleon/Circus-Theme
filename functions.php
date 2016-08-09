@@ -11,8 +11,8 @@ Include Scripts
 /* Use this functions.php to activate features and include css, js, fonts, etc */
 function scratch_script_enqueue(){
 	// CSS
-	wp_enqueue_style( 'bootstrapcss', get_template_directory_uri() .'/css/bootstrap-menu.css', array(), '3.3.7', 'all' );
-	// wp_enqueue_style( 'bootstrapcss', get_template_directory_uri() .'/css/bootstrap.min.css', array(), '3.3.7', 'all' );
+	//wp_enqueue_style( 'bootstrapcss', get_template_directory_uri() .'/css/bootstrap-menu.css', array(), '3.3.7', 'all' );
+	 wp_enqueue_style( 'bootstrapcss', get_template_directory_uri() .'/css/bootstrap.css', array(), '3.3.7', 'all' );
 
 	wp_enqueue_style( 'myStyle', get_template_directory_uri() .'/css/scratch.css', array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'robotoStyle', get_template_directory_uri() .'/css/robotoFont.css', array(), '1.0.0', 'all' );
