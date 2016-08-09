@@ -8,13 +8,11 @@
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 		<link rel= "icon" media="all" type="image/vnd.microsoft.icon" href="favicon.ico" />
 
-		
-		 <!-- wp_head grabs functions??? -->
 		<? wp_head(); ?>
 	</head>
 
 			<!-- Set styles in the body tag for homepage vs other pages. -->
-			<?php 
+			<?php   //No use for this at the moment but good to have available.
 			// if( is_front_page() ):  // or ... is_home .... where True if BLOG view homepage. 
 			// 	$myBodyClass = array('frontBG', 'frontTextColor');
 			// else:
@@ -24,14 +22,14 @@
 
 	<body  <?php //body_class( $myBodyClass );  //could be array here instead of var ?>>
 	<div id='site-wrapper'>
-	<!-- <div class='container'> -->
+	
 		<div class="bg2"></div>
     	<div class="bg"></div>
 	
 		<div id='title-box-bg'>
 			<header><h1>~Joe UX Designer~</h1></header>
 			<div id='title-box'>
-				<div id='monkeyDiv'><!-- change monkey to BG img -->
+				<div id='monkeyDiv'><!-- change monkey to BG img for ifinite zoom-in -->
 					<img  id='monkey' src="<?php header_image(); ?>" alt='juggling sock monkey picture'>
 					<!-- <img id='monkey' src="images/UXmonkeyMask400.png" alt='juggling sock monkey picture'> -->
 				</div>
@@ -39,27 +37,73 @@
 	    			<h1>~Joe UX Designer~</h1>
 					<blockquote>
 					<?php 
-						/* Grabs the value that user entered via plugin. */
-						echo get_option('hello_world_data'); 
+						/* Grabs the Tagline value that user entered via plugin. */
+						$options = get_option( 'sit_settings' );
+						echo $options['sit_textarea_field_11'];
+						//echo get_option('hello_world_data'); 
 					?>
 				</blockquote>
 				</div>
 			</div>		
 		</div>
 
+
+
 		<div id='social_bar'>
-        	<a title='My Stack Overflow' href='http://stackoverflow.com/users/6592015/joe-ux?tab=profile' target='_blank'>
-                <i class="zmdi zmdi-stack-overflow"></i>
-            </a> 
-            <a title='My LinkedIn' href='https://www.linkedin.com/in/joeuxdesigner' target='_blank'>
-                <i class="zmdi zmdi-linkedin-box"></i>
-            </a>
-            <a title='My Twitter' href='https://twitter.com/CarrboroJoe' target='_blank'>
-                <i class="zmdi zmdi-twitter-box"></i>
-            </a>           
-            <a title='My GitHub' href='https://github.com/chameleon' target='_blank'>
-                <i class="zmdi zmdi-github-box"></i>
-            </a>           
+			<!-- 
+			This needs to be refactored and put in an include()!
+			Currently:  
+			1) get indexes from table where user has entered a value.
+			2) Put those indexes in an array
+			3) Loop through that array and use each value as
+			an index when searching  the className:URL hash array to grab both values.
+			My values:
+			http://stackoverflow.com/users/6592015/joe-ux?tab=profile
+			https://www.linkedin.com/in/joeuxdesigner
+			https://twitter.com/CarrboroJoe
+			https://github.com/chameleon
+			-->
+			<?php
+
+			//For now: these items must be in the same order as in the WP plugin.
+			$userSocialIcons = array(
+			    "facebook-box",
+			    "twitter-box",
+			    "linkedin-box",
+			    "google-plus-box",
+			    "pinterest-box",
+			    "stack-overflow",
+			    "github-box"
+			);
+
+
+			$userIconList = array();
+
+			$options = get_option( 'sit_settings' );
+			 	$optionsKeys = array_keys($options);			
+
+			$i = 0;
+			foreach ($options as $key => $value){
+				if ($options[$key]){  // if its not empty
+					$userIconList[$i] = $value;  //add the index num and url to a new array
+					//print_r($userIconList);  					
+				}
+				$i++;
+			}
+			$i = 0;
+
+
+			$iconKeys = array_keys($userSocialIcons);
+
+			foreach ($userIconList as $fieldNum => $url){  
+			?>
+	      		<a href="<?php echo $url; ?>" target="_blank">
+	      			<i class="zmdi zmdi-<?php echo $userSocialIcons[$fieldNum]; ?>"></i>
+	      		</a>
+			<?php
+		    }
+		    ?>
+           
         </div>
 		
 		<div class='container containerMenuOverride'>
@@ -77,8 +121,8 @@
 					        <span class="icon-bar"></span>
 					      </button>
 					      
-					      	<img src="<?php bloginfo('stylesheet_directory'); ?>/images/flag.png">
-					     
+					      	<!-- <img src="<?php bloginfo('stylesheet_directory'); ?>/images/flag.png"> -->
+					     	<img src="<?php echo get_template_directory_uri(); ?>/images/flag.png" />
 					    </div>
 
 					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
