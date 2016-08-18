@@ -8,7 +8,7 @@
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 		<link rel= "icon" media="all" type="image/vnd.microsoft.icon" href="favicon.ico" />
 
-		<? wp_head(); ?>
+		<?php wp_head(); ?>
 	</head>
 
 			<!-- Set styles in the body tag for homepage vs other pages. -->

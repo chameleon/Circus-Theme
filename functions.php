@@ -1,8 +1,10 @@
 <?php
 /*
 Call a function to do an action with a hook
+*/
 
 
+/*
 ======================
 Include Scripts
 ======================
@@ -10,9 +12,15 @@ Include Scripts
 
 /* Use this functions.php to activate features and include css, js, fonts, etc */
 function scratch_script_enqueue(){
+	//same as enqueue but with register function name
+	wp_register_style( 'bootstrapcss', get_template_directory_uri() .'/css/bootstrap.css', array(), '3.3.7', 'all' );
+	wp_register_style( 'myStyle', get_template_directory_uri() .'/css/scratch.css', array(), '1.0.0', 'all' );
+	wp_register_style( 'robotoStyle', get_template_directory_uri() .'/css/robotoFont.css', array(), '1.0.0', 'all' );
+	wp_register_style( 'iconicStyle', get_template_directory_uri() .'/css/material-design-iconic-font.min.css', array(), '1.0.0', 'all' );
+
 	// CSS
 	//wp_enqueue_style( 'bootstrapcss', get_template_directory_uri() .'/css/bootstrap-menu.css', array(), '3.3.7', 'all' );
-	 wp_enqueue_style( 'bootstrapcss', get_template_directory_uri() .'/css/bootstrap.css', array(), '3.3.7', 'all' );
+	wp_enqueue_style( 'bootstrapcss', get_template_directory_uri() .'/css/bootstrap.css', array(), '3.3.7', 'all' );
 
 	wp_enqueue_style( 'myStyle', get_template_directory_uri() .'/css/scratch.css', array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'robotoStyle', get_template_directory_uri() .'/css/robotoFont.css', array(), '1.0.0', 'all' );
@@ -36,6 +44,7 @@ function scratch_script_enqueue(){
 	
 	
 }
+/* This has an 's' on the end- is a WP reserved 'when' function name */
 add_action( 'wp_enqueue_scripts', 'scratch_script_enqueue' );
 
 
@@ -119,6 +128,29 @@ function scratch_widget_setup(){
 }
 /* 1st param is WHEN, */
 add_action( 'widgets_init', 'scratch_widget_setup' );
+
+/*  NOTES  */
+// Registering the CSS Files
+// If you're going to load CSS stylesheets, you should register them first with the wp_register_style() function:
+
+// 1
+// 2
+// 3
+// <? php
+// wp_register_style( $handle, $src, $deps, $ver, $media );
+// ? >
+// $handle (string, required) is unique name for your stylesheet. Other functions will use this "handle" to enqueue and print your stylesheet.
+// $src (string, required) refers to the URL of the stylesheet. You can use functions like get_template_directory_uri() to get the style files inside your theme's directory. Don't ever think about hard-coding it!
+// $deps (array, optional) handles names for dependent styles. If your stylesheet won't work if some other style file is missing, use this parameter to set the "dependencies".
+// $ver (string or boolean, optional) is the version number. You can use your theme's version number or make up one, if you want. If you don't want to use a version number, set it to null. It defaults to false, which makes WordPress add its own version number.
+// $media (string, optional) is the CSS media types like "screen" or "handheld" or "print". If you're not sure you need to use this, don't use it. It defaults to "all".
+/*
+======================
+REGISTER CSS 
+(optional?  What about in WP 4.6 Pepper? )
+// EX.  wp_register_style( $handle, $src, $deps, $ver, $media );
+======================
+*/
 
 
 ?>
